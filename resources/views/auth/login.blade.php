@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="Form Login">Form Login</h2>
+        <h2 class="text-center">Form Login</h2>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
