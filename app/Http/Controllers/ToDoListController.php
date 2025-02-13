@@ -46,4 +46,24 @@ class ToDoListController extends Controller
         $todolist->delete();
         return redirect()->route('dashboard')->with('success','Tugas berhasil dihapus');
     }
+    public function edit(ToDoList $todolist)
+    {
+        if($todolist->user_id != Auth::id()){
+            return redirect()->route('dashboard')->with('error','Tidak bisa mengubah tugas orang lain');
+        }
+        return view('edit_todolist', compact('todolist'));
+    }
+    public function updateName(Request $request, ToDoList $todolist)
+    {
+        if($todolist->user_id != Auth::id()){
+            return redirect()->route('dashboard')->with('error','Tidak bisa mengubah tugas orang lain');
+        }
+        $request->validate([
+            'nama_tugas' => ['required','string','max:255'],
+        ]);
+        $todolist->update([
+            'nama_tugas' => $request->nama_tugas,
+        ]);
+        return redirect()->route('dashboard')->with('success','Nama tugas berhasil diubah');
+    }
 }

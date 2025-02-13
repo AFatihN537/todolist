@@ -35,6 +35,7 @@
                         </form>
                     </td>
                     <td>
+                        <a href="{{ route('todolist.edit', $todolist->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('todolist.destroy', $todolist->id) }}" method="POST" style="display: inline">
                             @csrf
                             @method('DELETE')
