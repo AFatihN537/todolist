@@ -8,8 +8,9 @@
         <div class="mb-3">
             <input type="text" name="nama_tugas" class="form-control" placeholder="Tambahkan Tugas Baru" required>
         </div>
-        <button type="submit" class="btn btn-primary">Tambah</button>
+        <button type="submit" class="btn btn-primary">Tambah</button> <a href="{{ route('todolist.history') }}" class="btn btn-info">Lihat Riwayat To-Do List</a>
     </form>
+    
     <table class="table table-bordered mt-3">
         <thead>
             <tr>

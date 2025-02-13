@@ -24,6 +24,8 @@ Route::delete('/todolist/{todolist}', [ToDoListController::class, 'destroy'])->m
 Route::get('/todolist/{todolist}/edit', [ToDoListController::class, 'edit'])->middleware('auth')->name('todolist.edit');
 Route::patch('/todolist/{todolist}/update-nama', [ToDoListController::class, 'updateName'])->middleware('auth')->name('todolist.updateName');
 
+Route::get('/todolist/history', [ToDoListController::class,'history'])->middleware('auth')->name('todolist.history');
+
 Route::get('/', function () {
     return view('welcome');
 });

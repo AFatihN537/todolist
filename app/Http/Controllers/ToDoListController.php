@@ -66,4 +66,9 @@ class ToDoListController extends Controller
         ]);
         return redirect()->route('dashboard')->with('success','Nama tugas berhasil diubah');
     }
+    public function history()
+    {
+        $todolists = ToDoList::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+        return view('history_todolist', compact('todolists'));
+    }
 }
