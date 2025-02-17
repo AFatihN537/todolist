@@ -10,20 +10,22 @@
     <div class="flex min-h-full flex-col px-6 py-12 lg:px-8 justify-center">
         <div class="sm:mx-auto h-10 w-auto">
             <h2 class="text-center mt-5 text-2xl/9 font-bold tracking-tight text-gray-900">Form Login</h2>
+            
         </div>
-        @if (session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">{{ session('success') }}</div>
-        @endif
-        @if ($errors->any())
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        
         <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+            @if (session('success'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded my-3">{{ session('success') }}</div>
+            @endif
+            @if ($errors->any())
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded my-3">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('login') }}" method="POST" class="space-y-6">
                 @csrf
                 <div>
@@ -51,6 +53,7 @@
                 Belum punya akun? <a href="/register" class="font-semibold text-indigo-600 hover:text-indigo-500">Daftar</a>
             </p>
         </div>
+        
     </div>
 </body>
 </html>
