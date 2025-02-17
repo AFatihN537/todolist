@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ToDoListController;
+use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
@@ -29,3 +30,6 @@ Route::get('/todolist/history', [ToDoListController::class,'history'])->middlewa
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
+
+Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google.auth');
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback']);
