@@ -25,6 +25,6 @@ class GoogleAuthController extends Controller
             ]
         );
         Auth::login($user);
-        return redirect('dashboard');
+        return redirect('dashboard')->with('success', 'Login Berhasil');
     }
 }

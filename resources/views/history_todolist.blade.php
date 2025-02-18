@@ -14,6 +14,7 @@
         </thead>
         <tbody>
             @foreach ($todolists as $index => $todolist)
+            <tr>
                 <td class="border p-2">{{ $index+1 }}</td>
                 <td class="border p-2">{{ $todolist->nama_tugas }}</td>
                 <td class="border p-2">
@@ -24,6 +25,7 @@
                     @endif
                 </td>
                 <td class="border p-2">{{ \Carbon\Carbon::parse($todolist->created_at)->translatedFormat('l, d F Y H:i:s') }} WIB</td>
+                </tr>
             @endforeach
         </tbody>
     </table>

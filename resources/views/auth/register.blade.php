@@ -52,10 +52,10 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-indigo-600">Daftar</button>               
+                <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-indigo-600 focus:ring-4 focus:ring-indigo-400">Daftar</button>               
             </form>
             <p class="mt-3 text-center">atau</p>
-            <button class="mt-3 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-indigo-600 gap-3" onclick="window.location.href='{{ route('google.auth') }}'"><img src="{{ asset('img/google.svg') }}" alt="" width="20">Lanjutkan dengan Google</button>
+            <button class="mt-3 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-indigo-600 gap-3 focus:ring-4 focus:ring-indigo-400" onclick="window.location.href='{{ route('google.auth') }}'"><img src="{{ asset('img/google.svg') }}" alt="" width="20">Lanjutkan dengan Google</button>
             <p class="mt-5 text-center text-sm/6 text-gray-500">
                 Sudah punya akun? <a href="/login" class="font-semibold text-indigo-600 hover:text-indigo-500">Login</a>
             </p>
