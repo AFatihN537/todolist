@@ -10,7 +10,7 @@
             <input type="text" name="nama_tugas" class="bg-white w-full border px-3 py-1.5 rounded-md outline-gray-300 outnline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 my-3" value="{{ $todolist->nama_tugas }}" required>
         </div>
         <div class="flex gap-2">
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:ring-4 focus:ring-green-400">Simpan Perubahan</button>
-        <a href="{{ route('dashboard') }}" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:ring-4 focus:ring-gray-400">Batal</a></div>
+        <button type="submit" class="bg-[#fe3b72] text-black px-4 py-2 rounded-xl shadow-2xl hover:bg-[#ff5182] ring-1 ring-gray-300 border-5 border-white">Simpan Perubahan</button>
+        <a href="{{ route('dashboard') }}" class="bg-gray-200 text-black px-4 py-2 rounded-xl shadow-2xl hover:bg-gray-100 ring-1 ring-gray-300 border-5 border-white">Batal</a></div>
     </form>
 @endsection

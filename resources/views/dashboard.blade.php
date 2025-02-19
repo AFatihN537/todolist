@@ -6,10 +6,12 @@
     <form action="{{ route('todolist.store') }}" method="POST">
         @csrf
         <div class="mb-3">
-            <input type="text" name="nama_tugas" class="bg-white w-full border px-3 py-1.5 rounded-md outline-gray-300 outnline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" placeholder="Tambahkan Tugas Baru" required>
+            <input type="text" name="nama_tugas" class="bg-white w-full border px-3 py-1.5 rounded-md outline-gray-500 outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900" placeholder="Tambahkan Tugas Baru" required>
         </div>
         <div class="mt-3 flex gap-2">
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-400">Tambah</button> <a href="{{ route('todolist.history') }}" class="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500 focus:ring-4 focus:ring-blue-200">Lihat Riwayat To-Do List</a></div>
+            <button type="submit" class="bg-[#fe3b72] text-white px-4 py-2 rounded-xl shadow-2xl hover:bg-[#ff5182] border-5 border-white ring-1 ring-gray-300">Tambah</button> 
+            <a href="{{ route('todolist.history') }}" class="bg-gray-200 text-black px-4 py-2 rounded-xl hover:bg-gray-100 border-5 border-white ring-1 ring-gray-300 shadow-2xl">Lihat Riwayat To-Do List</a>
+        </div>
     </form>
     <div class="relative rounded-md">
     <table class="w-full mt-6 border-collapse border table-auto border-gray-300">
@@ -30,7 +32,7 @@
                         <form action="{{ route('todolist.update', $todolist->id) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <select name="status_tugas" class="border p-2 rounded-md w-full" onchange="this.form.submit()">
+                            <select name="status_tugas" class="border px-3 py-1.5 rounded-md w-full outline-1 outline-gray-300 focus:outline-gray-900" onchange="this.form.submit()">
                                 <option value="pending" {{ $todolist->status_tugas =='pending' ? 'selected' : '' }}>Pending</option>
                                 <option value="completed" {{ $todolist->status_tugas =='completed' ? 'selected' : '' }}>Completed</option>
                             </select>
@@ -38,11 +40,11 @@
                     </td>
                     <td class="border p-2">
                         <div class="gap-2 flex">
-                            <a href="{{ route('todolist.edit', $todolist->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 focus:ring-yellow-300 focus:ring-4">Edit</a>
+                            <a href="{{ route('todolist.edit', $todolist->id) }}" class="bg-gray-200 hover:bg-gray-100 text-black px-3 py-1 rounded-xl shadow-2xl border-5 border-white ring-1 ring-gray-300"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{ route('todolist.destroy', $todolist->id) }}" method="POST" style="display: inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 focus:ring-4 focus:ring-red-400">Hapus</button>
+                                <button type="submit" class="bg-[#cc0000] text-white px-3 py-1 rounded-xl shadow-2xl hover:bg-[#900000] border-5 border-white ring-1 ring-gray-300"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </div>
                     </td>
@@ -53,6 +55,6 @@
     </div>
     <form action="{{ route('logout') }}" method="POST" class="mt-6 flex">
         @csrf
-        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:ring-4 focus:ring-red-300">Logout</button>
+        <button type="submit" class="bg-[#cc1000] text-white px-4 py-2 rounded-xl shadow-2xl hover:bg-red-900 border-5 border-white ring-1 ring-gray-300">Logout</button>
     </form>
 @endsection

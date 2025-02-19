@@ -30,5 +30,5 @@
         </tbody>
     </table>
     <div class="mt-6">
-    <a href="{{ route('dashboard') }}" class="bg-blue-600 text-white px-4 py-2 rounded-md">Kembali ke Dashboard</a></div>
+    <a href="{{ route('dashboard') }}" class="bg-gray-200 text-black px-4 py-2 rounded-xl shadow-2xl hover:bg-gray-100 ring-1 ring-gray-300 border-5 border-white">Kembali ke Dashboard</a></div>
 @endsection
